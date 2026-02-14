@@ -25,7 +25,7 @@ export function Header({ items }: HeaderProps) {
   const t = translations[language];
 
   return (
-    <header className="w-full flex flex-col">
+    <header className="w-full flex flex-col sticky top-0 z-50 bg-white">
       {/* Top Bar */}
       <div className="w-full bg-[#074a2c] text-white">
         <div className="container mx-auto flex h-10 items-center justify-between px-4">
@@ -79,7 +79,7 @@ export function Header({ items }: HeaderProps) {
       </div>
 
       {/* Main Navigation */}
-      <div className="w-full bg-white border-b border-gray-100">
+      <div className="w-full bg-white">
         <div className="container mx-auto flex h-20 items-center justify-between px-4">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
