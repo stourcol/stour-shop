@@ -1,14 +1,26 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Outfit, Inter } from "next/font/google";
 import "./globals.css";
+import { Header } from "@/components/layout/Header";
+import { NavItem } from "@/types";
+import { LanguageProvider } from "@/context/LanguageContext";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const navItems: NavItem[] = [
+  { title: "home", href: "/" },
+  { title: "shop", href: "/shop" },
+  { title: "categories", href: "/categories" },
+  { title: "about", href: "/about" },
+  { title: "contact", href: "/contact" },
+  { title: "blog", href: "/blog" },
+];
+
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
@@ -25,9 +37,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${outfit.variable} ${inter.variable} antialiased font-sans`}
       >
-        {children}
+        <LanguageProvider>
+          <Header items={navItems} />
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );
