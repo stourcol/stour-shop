@@ -1,12 +1,12 @@
 'use client';
 
-import { useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { NavItem } from '@/types';
-import { Search, Heart, ShoppingCart, User, Facebook, Instagram, Youtube, Menu, X, ChevronDown } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
+import { NavItem } from '@/types';
 import { translations } from '@/utils/translations';
+import { ChevronDown, Facebook, Heart, Instagram, Menu, Search, ShoppingCart, User, X, Youtube } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useState } from 'react';
 
 interface HeaderProps {
   items: NavItem[];
