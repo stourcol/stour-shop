@@ -11,7 +11,9 @@ const categories = [
 ];
 
 export function Categories() {
-  const [selectedCategory, setSelectedCategory] = React.useState<string | null>(null);
+  const [selectedCategory, setSelectedCategory] = React.useState<string | null>(
+    null
+  );
 
   return (
     <section className="container mx-auto px-4 py-12">
@@ -27,26 +29,16 @@ export function Categories() {
             onClick={() => setSelectedCategory(category.name)}
           >
             <div
-              className={`w-20 h-20 md:w-24 md:h-24 rounded-full flex items-center justify-center mb-3 transition-colors duration-300
-                ${selectedCategory === category.name
-                  ? "bg-[#fbbf24] text-[#074a2c]"
-                  : "bg-[#f8f5f2] group-hover:bg-[#fbbf24]"
+              className={`w-20 h-20 md:w-24 md:h-24 rounded-full flex items-center justify-center mb-3 transition-colors duration-300 border-2 bg-[#f8f5f2]
+                ${
+                  selectedCategory === category.name
+                    ? "border-[#fcd34d]"
+                    : "border-transparent group-hover:border-[#fcd34d]"
                 }`}
             >
-              <category.icon
-                className={`w-8 h-8 md:w-10 md:h-10 stroke-[1.5] transition-colors duration-300
-                  ${selectedCategory === category.name
-                    ? "text-[#074a2c]"
-                    : "text-[#074a2c]"
-                  }`}
-              />
+              <category.icon className="w-8 h-8 md:w-10 md:h-10 text-[#074a2c] stroke-[1.5]" />
             </div>
-            <span className={`font-medium text-sm md:text-base uppercase tracking-wide transition-colors duration-300
-              ${selectedCategory === category.name
-                ? "text-[#fbbf24]"
-                : "text-[#074a2c] group-hover:text-[#fbbf24]"
-              }`}
-            >
+            <span className="font-display font-medium text-sm md:text-base uppercase tracking-wide text-[#074a2c] transition-colors duration-300">
               {category.name}
             </span>
           </div>

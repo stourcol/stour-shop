@@ -1,5 +1,6 @@
 import { Hero } from "@/components/home/Hero";
 import { Categories } from "@/components/home/Categories";
+import { ProductGrid } from "@/components/home/ProductGrid";
 
 export default function Home() {
   return (
@@ -7,6 +8,7 @@ export default function Home() {
       <Hero />
 
       <Categories />
+      <ProductGrid />
     </main>
   );
 }

@@ -1,12 +1,23 @@
-'use client';
+"use client";
 
-import { useLanguage } from '@/context/LanguageContext';
-import { NavItem } from '@/types';
-import { translations } from '@/utils/translations';
-import { ChevronDown, Facebook, Heart, Instagram, Menu, Search, ShoppingCart, User, X, Youtube } from 'lucide-react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useState } from 'react';
+import { useLanguage } from "@/context/LanguageContext";
+import { NavItem } from "@/types";
+import { translations } from "@/utils/translations";
+import {
+  ChevronDown,
+  Facebook,
+  Heart,
+  Instagram,
+  Menu,
+  Search,
+  ShoppingCart,
+  User,
+  X,
+  Youtube,
+} from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
 
 interface HeaderProps {
   items: NavItem[];
@@ -17,7 +28,7 @@ export function Header({ items }: HeaderProps) {
   const { language, setLanguage } = useLanguage();
   const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
 
-  const toggleLanguage = (lang: 'ES' | 'EN') => {
+  const toggleLanguage = (lang: "ES" | "EN") => {
     setLanguage(lang);
     setIsLanguageDropdownOpen(false);
   };
@@ -29,7 +40,6 @@ export function Header({ items }: HeaderProps) {
       {/* Top Bar */}
       <div className="w-full bg-[#074a2c] text-white">
         <div className="container mx-auto flex h-10 items-center justify-between px-4">
-
           {/* Left: Spacer (was Contact) */}
           <div className="hidden md:block"></div>
 
@@ -43,23 +53,25 @@ export function Header({ items }: HeaderProps) {
             <div className="relative">
               <button
                 className="flex items-center space-x-1 text-xs font-medium hover:text-gray-200 transition-colors cursor-pointer"
-                onClick={() => setIsLanguageDropdownOpen(!isLanguageDropdownOpen)}
+                onClick={() =>
+                  setIsLanguageDropdownOpen(!isLanguageDropdownOpen)
+                }
               >
-                <span>{language === 'ES' ? 'ES 🇪🇸' : 'EN 🇺🇸'}</span>
+                <span>{language === "ES" ? "ES 🇪🇸" : "EN 🇺🇸"}</span>
                 <ChevronDown className="h-3 w-3" />
               </button>
 
               {isLanguageDropdownOpen && (
                 <div className="absolute top-full right-0 mt-2 w-24 bg-white rounded shadow-lg py-1 z-50 text-black">
                   <button
-                    className={`w-full text-left px-4 py-2 text-xs hover:bg-gray-100 ${language === 'ES' ? 'font-bold text-[#074a2c]' : ''}`}
-                    onClick={() => toggleLanguage('ES')}
+                    className={`w-full text-left px-4 py-2 text-xs hover:bg-gray-100 ${language === "ES" ? "font-bold text-[#074a2c]" : ""}`}
+                    onClick={() => toggleLanguage("ES")}
                   >
                     ES 🇪🇸
                   </button>
                   <button
-                    className={`w-full text-left px-4 py-2 text-xs hover:bg-gray-100 ${language === 'EN' ? 'font-bold text-[#074a2c]' : ''}`}
-                    onClick={() => toggleLanguage('EN')}
+                    className={`w-full text-left px-4 py-2 text-xs hover:bg-gray-100 ${language === "EN" ? "font-bold text-[#074a2c]" : ""}`}
+                    onClick={() => toggleLanguage("EN")}
                   >
                     EN 🇺🇸
                   </button>
@@ -69,10 +81,22 @@ export function Header({ items }: HeaderProps) {
 
             {/* Right: Social Icons */}
             <div className="flex items-center space-x-3 bg-[#074a2c] rounded-bl-lg pl-4">
-              <SocialIcon icon={Facebook} href="https://www.facebook.com/col.stour" />
-              <SocialIcon icon={Instagram} href="https://www.instagram.com/col.stour/?hl=es-la" />
-              <SocialIcon icon={Youtube} href="https://www.youtube.com/@colstour" />
-              <SocialIcon icon={WhatsAppIcon} href="https://wa.me/573104752440" />
+              <SocialIcon
+                icon={Facebook}
+                href="https://www.facebook.com/col.stour"
+              />
+              <SocialIcon
+                icon={Instagram}
+                href="https://www.instagram.com/col.stour/?hl=es-la"
+              />
+              <SocialIcon
+                icon={Youtube}
+                href="https://www.youtube.com/@colstour"
+              />
+              <SocialIcon
+                icon={WhatsAppIcon}
+                href="https://wa.me/573104752440"
+              />
             </div>
           </div>
         </div>
@@ -103,13 +127,12 @@ export function Header({ items }: HeaderProps) {
                 className={`relative text-sm font-display font-medium tracking-wide transition-colors hover:text-[#fbba16] 
                   after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:bg-[#fbba16] 
                   after:scale-x-0 after:origin-center after:transition-transform after:duration-300 hover:after:scale-x-100
-                  ${item.disabled ? 'text-gray-400 pointer-events-none' : 'text-gray-700'}`}
+                  ${item.disabled ? "text-gray-400 pointer-events-none" : "text-gray-700"}`}
               >
                 {t.nav[item.title as keyof typeof t.nav] || item.title}
               </Link>
             ))}
           </nav>
-
 
           {/* Utilities & Mobile Toggle */}
           <div className="flex items-center space-x-6 text-black">
@@ -152,8 +175,11 @@ export function Header({ items }: HeaderProps) {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`text-lg font-display font-medium tracking-wide transition-colors hover:text-[#074a2c] ${item.disabled ? 'text-gray-400 pointer-events-none' : 'text-gray-700'
-                  }`}
+                className={`text-lg font-display font-medium tracking-wide transition-colors hover:text-[#074a2c] ${
+                  item.disabled
+                    ? "text-gray-400 pointer-events-none"
+                    : "text-gray-700"
+                }`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {t.nav[item.title as keyof typeof t.nav] || item.title}
@@ -179,7 +205,6 @@ export function Header({ items }: HeaderProps) {
     </header>
   );
 }
-
 
 function SocialIcon({ icon: Icon, href }: { icon: any; href: string }) {
   return (
