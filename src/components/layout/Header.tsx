@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface HeaderProps {
   items: NavItem[];
@@ -28,6 +28,17 @@ export function Header({ items }: HeaderProps) {
   const { language, setLanguage } = useLanguage();
   const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
 
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const toggleLanguage = (lang: "ES" | "EN") => {
     setLanguage(lang);
     setIsLanguageDropdownOpen(false);
@@ -36,7 +47,10 @@ export function Header({ items }: HeaderProps) {
   const t = translations[language];
 
   return (
-    <header className="w-full flex flex-col sticky top-0 z-50 bg-white">
+    <header
+      className={`w-full flex flex-col sticky top-0 z-50 bg-white transition-all duration-300 ${scrolled ? "shadow-lg" : ""
+        }`}
+    >
       {/* Top Bar */}
       <div className="w-full bg-[#074a2c] text-white">
         <div className="container mx-auto flex h-10 items-center justify-between px-4">
@@ -175,11 +189,10 @@ export function Header({ items }: HeaderProps) {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`text-lg font-display font-medium tracking-wide transition-colors hover:text-[#074a2c] ${
-                  item.disabled
-                    ? "text-gray-400 pointer-events-none"
-                    : "text-gray-700"
-                }`}
+                className={`text-lg font-display font-medium tracking-wide transition-colors hover:text-[#074a2c] ${item.disabled
+                  ? "text-gray-400 pointer-events-none"
+                  : "text-gray-700"
+                  }`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {t.nav[item.title as keyof typeof t.nav] || item.title}

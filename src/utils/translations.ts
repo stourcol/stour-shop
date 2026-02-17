@@ -85,6 +85,26 @@ export const translations = {
         },
       },
     },
+    shopPage: {
+      title: "Tienda",
+      subtitle: "Explora nuestra colección completa",
+      search: "Buscar productos...",
+      filter: "Filtrar",
+      filters: {
+        category: "Categorías",
+        price: "Rango de Precio",
+        clear: "Limpiar filtros",
+      },
+      sort: {
+        label: "Ordenar por:",
+        relevance: "Relevancia",
+        priceLow: "Precio: Menor a Mayor",
+        priceHigh: "Precio: Mayor a Menor",
+        newest: "Más recientes",
+      },
+      results: "resultados encontrados",
+      noResults: "No se encontraron productos que coincidan con tu búsqueda.",
+    },
   },
   EN: {
     nav: {
@@ -171,6 +191,26 @@ export const translations = {
           desc: "Professional audiovisual production to bring your brand to life and communicate your message effectively.",
         },
       },
+    },
+    shopPage: {
+      title: "Shop",
+      subtitle: "Explore our complete collection",
+      search: "Search products...",
+      filter: "Filter",
+      filters: {
+        category: "Categories",
+        price: "Price Range",
+        clear: "Clear filters",
+      },
+      sort: {
+        label: "Sort by:",
+        relevance: "Relevance",
+        priceLow: "Price: Low to High",
+        priceHigh: "Price: High to Low",
+        newest: "Newest",
+      },
+      results: "results found",
+      noResults: "No products found matching your search.",
     },
   },
 };
