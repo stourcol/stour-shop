@@ -87,7 +87,7 @@ export function ProductList({ products, viewMode }: ProductListProps) {
                             </div>
 
                             <button
-                                className="bg-[#fbba16] text-[#074a2c] px-6 py-2 rounded-full font-bold text-sm hover:bg-[#074a2c] hover:text-[#fbba16] transition-colors flex items-center gap-2"
+                                className="bg-[#fbba16] text-[#074a2c] px-6 py-2 rounded-full font-bold text-sm hover:bg-[#074a2c] hover:text-[#fbba16] transition-colors flex items-center gap-2 cursor-pointer"
                                 onClick={(e) => {
                                     e.preventDefault();
                                     // Add to cart logic here

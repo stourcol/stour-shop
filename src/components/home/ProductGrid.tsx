@@ -90,7 +90,7 @@ export function ProductGrid() {
             <button
               key={option.id}
               onClick={() => setSortBy(option.id as SortOption)}
-              className={`flex items-center gap-2 px-6 py-2.5 rounded-full font-display font-bold text-sm transition-all duration-300 shadow-sm
+              className={`flex items-center gap-2 px-6 py-2.5 rounded-full font-display font-bold text-sm transition-all duration-300 shadow-sm cursor-pointer
                 ${sortBy === option.id
                   ? "bg-brand-green text-white shadow-brand-green/20"
                   : "bg-white text-gray-600 hover:bg-gray-50 border border-gray-100"
@@ -130,7 +130,7 @@ export function ProductGrid() {
 
       <div className="flex justify-center mt-16">
         <Link href="/shop">
-          <button className="bg-brand-green text-white px-10 py-4 rounded-full font-display font-bold text-lg hover:bg-brand-green/90 transition-all hover:scale-105 active:scale-95 shadow-xl shadow-brand-green/20">
+          <button className="bg-brand-green text-white px-10 py-4 rounded-full font-display font-bold text-lg hover:bg-brand-green/90 transition-all hover:scale-105 active:scale-95 shadow-xl shadow-brand-green/20 cursor-pointer">
             {t.viewAll}
           </button>
         </Link>

@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowRight, Plus } from "lucide-react";
+import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
@@ -42,12 +43,16 @@ export function Hero() {
           </p>
 
           <div className="flex flex-wrap gap-4">
-            <button className="bg-[#fbba16] text-[#074a2c] px-8 py-3 rounded-full font-display font-bold hover:bg-white transition-colors flex items-center gap-2">
-              {t.viewShop}
-            </button>
-            <button className="border border-white/30 text-white px-8 py-3 rounded-full font-display font-medium hover:bg-white/10 transition-colors flex items-center gap-2">
-              {t.exploreMore} <ArrowRight className="w-4 h-4" />
-            </button>
+            <Link href="/shop">
+              <button className="bg-[#fbba16] text-[#074a2c] px-8 py-3 rounded-full font-display font-bold hover:bg-white transition-colors flex items-center gap-2 cursor-pointer">
+                {t.viewShop}
+              </button>
+            </Link>
+            <Link href="/shop">
+              <button className="border border-white/30 text-white px-8 py-3 rounded-full font-display font-medium hover:bg-white/10 transition-colors flex items-center gap-2 cursor-pointer">
+                {t.exploreMore} <ArrowRight className="w-4 h-4" />
+              </button>
+            </Link>
           </div>
         </div>
 

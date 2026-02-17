@@ -78,13 +78,13 @@ export function Header({ items }: HeaderProps) {
               {isLanguageDropdownOpen && (
                 <div className="absolute top-full right-0 mt-2 w-24 bg-white rounded shadow-lg py-1 z-50 text-black">
                   <button
-                    className={`w-full text-left px-4 py-2 text-xs hover:bg-gray-100 ${language === "ES" ? "font-bold text-[#074a2c]" : ""}`}
+                    className={`w-full text-left px-4 py-2 text-xs hover:bg-gray-100 cursor-pointer ${language === "ES" ? "font-bold text-[#074a2c]" : ""}`}
                     onClick={() => toggleLanguage("ES")}
                   >
                     ES 🇪🇸
                   </button>
                   <button
-                    className={`w-full text-left px-4 py-2 text-xs hover:bg-gray-100 ${language === "EN" ? "font-bold text-[#074a2c]" : ""}`}
+                    className={`w-full text-left px-4 py-2 text-xs hover:bg-gray-100 cursor-pointer ${language === "EN" ? "font-bold text-[#074a2c]" : ""}`}
                     onClick={() => toggleLanguage("EN")}
                   >
                     EN 🇺🇸
@@ -199,15 +199,15 @@ export function Header({ items }: HeaderProps) {
               </Link>
             ))}
             <div className="pt-4 border-t border-gray-100 flex flex-col space-y-4">
-              <button className="flex items-center space-x-2 text-gray-700 hover:text-[#074a2c]">
+              <button className="flex items-center space-x-2 text-gray-700 hover:text-[#074a2c] cursor-pointer">
                 <Search className="h-5 w-5" />
                 <span>{t.utilities.search}</span>
               </button>
-              <button className="flex items-center space-x-2 text-gray-700 hover:text-[#074a2c]">
+              <button className="flex items-center space-x-2 text-gray-700 hover:text-[#074a2c] cursor-pointer">
                 <Heart className="h-5 w-5" />
                 <span>{t.utilities.wishlist}</span>
               </button>
-              <button className="flex items-center space-x-2 text-gray-700 hover:text-[#074a2c]">
+              <button className="flex items-center space-x-2 text-gray-700 hover:text-[#074a2c] cursor-pointer">
                 <User className="h-5 w-5" />
                 <span>{t.utilities.account}</span>
               </button>

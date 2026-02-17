@@ -48,7 +48,7 @@ export function Categories() {
               {t.desc}
             </p>
           </div>
-          <button className="group flex items-center gap-2 text-brand-green font-display font-bold hover:text-brand-yellow transition-colors">
+          <button className="group flex items-center gap-2 text-brand-green font-display font-bold hover:text-brand-yellow transition-colors cursor-pointer">
             {t.viewAll} <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
         </div>

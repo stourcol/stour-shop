@@ -53,7 +53,7 @@ export function ShopFilters({
                     <h2 className="font-display font-bold text-xl text-[#074a2c]">
                         {t.filter}
                     </h2>
-                    <button onClick={onMobileClose}>
+                    <button onClick={onMobileClose} className="cursor-pointer">
                         <X className="w-6 h-6 text-gray-500" />
                     </button>
                 </div>
@@ -83,7 +83,7 @@ export function ShopFilters({
                     <div className="space-y-2">
                         <button
                             onClick={() => onCategoryChange(null)}
-                            className={`w-full text-left px-3 py-2 rounded-lg text-sm font-medium transition-colors
+                            className={`w-full text-left px-3 py-2 rounded-lg text-sm font-medium transition-colors cursor-pointer
                 ${selectedCategory === null
                                     ? "bg-[#074a2c] text-white"
                                     : "text-gray-600 hover:bg-gray-50"
@@ -101,7 +101,7 @@ export function ShopFilters({
                                 <button
                                     key={catKey}
                                     onClick={() => onCategoryChange(catName)}
-                                    className={`w-full text-left px-3 py-2 rounded-lg text-sm font-medium transition-colors
+                                    className={`w-full text-left px-3 py-2 rounded-lg text-sm font-medium transition-colors cursor-pointer
                     ${isSelected
                                             ? "bg-[#074a2c] text-white"
                                             : "text-gray-600 hover:bg-gray-50"

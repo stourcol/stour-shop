@@ -79,7 +79,7 @@ export default function ShopPage() {
                             <div className="flex items-center gap-2">
                                 <button
                                     onClick={() => setIsMobileFiltersOpen(true)}
-                                    className="lg:hidden flex items-center gap-2 text-[#074a2c] font-bold border border-gray-200 px-4 py-2 rounded-lg hover:bg-gray-50"
+                                    className="lg:hidden flex items-center gap-2 text-[#074a2c] font-bold border border-gray-200 px-4 py-2 rounded-lg hover:bg-gray-50 cursor-pointer"
                                 >
                                     <SlidersHorizontal className="w-4 h-4" />
                                     {t.filter}
@@ -93,18 +93,18 @@ export default function ShopPage() {
                                 <div className="bg-gray-100 p-1 rounded-lg flex items-center">
                                     <button
                                         onClick={() => setViewMode("grid")}
-                                        className={`p-2 rounded-md transition-all ${viewMode === "grid"
-                                                ? "bg-white text-[#074a2c] shadow-sm"
-                                                : "text-gray-400 hover:text-gray-600"
+                                        className={`p-2 rounded-md transition-all cursor-pointer ${viewMode === "grid"
+                                            ? "bg-white text-[#074a2c] shadow-sm"
+                                            : "text-gray-400 hover:text-gray-600"
                                             }`}
                                     >
                                         <LayoutGrid className="w-5 h-5" />
                                     </button>
                                     <button
                                         onClick={() => setViewMode("list")}
-                                        className={`p-2 rounded-md transition-all ${viewMode === "list"
-                                                ? "bg-white text-[#074a2c] shadow-sm"
-                                                : "text-gray-400 hover:text-gray-600"
+                                        className={`p-2 rounded-md transition-all cursor-pointer ${viewMode === "list"
+                                            ? "bg-white text-[#074a2c] shadow-sm"
+                                            : "text-gray-400 hover:text-gray-600"
                                             }`}
                                     >
                                         <List className="w-5 h-5" />

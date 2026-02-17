@@ -35,7 +35,7 @@ export function ProductCard({ product }: ProductCardProps) {
 
         {/* Quick Add Button - Appears on hover */}
         <button
-          className="absolute bottom-4 right-4 translate-y-12 rounded-full bg-[#fbba16] p-3 text-[#074a2c] shadow-lg transition-all duration-300 hover:bg-[#074a2c] hover:text-[#fbba16] group-hover:translate-y-0"
+          className="absolute bottom-4 right-4 translate-y-12 rounded-full bg-[#fbba16] p-3 text-[#074a2c] shadow-lg transition-all duration-300 hover:bg-[#074a2c] hover:text-[#fbba16] group-hover:translate-y-0 cursor-pointer"
           aria-label="Add to cart"
         >
           <ShoppingCart className="h-5 w-5" />

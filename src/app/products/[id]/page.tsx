@@ -120,7 +120,7 @@ export default function ProductPage({
               <div className="flex items-center justify-between bg-[#f8f5f2] rounded-full px-4 py-3 min-w-[140px]">
                 <button
                   onClick={decreaseQuantity}
-                  className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white text-[#074a2c] transition-colors"
+                  className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white text-[#074a2c] transition-colors cursor-pointer"
                   aria-label="Decrease quantity"
                 >
                   <Minus className="w-4 h-4" />
@@ -130,7 +130,7 @@ export default function ProductPage({
                 </span>
                 <button
                   onClick={increaseQuantity}
-                  className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white text-[#074a2c] transition-colors"
+                  className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white text-[#074a2c] transition-colors cursor-pointer"
                   aria-label="Increase quantity"
                 >
                   <Plus className="w-4 h-4" />
@@ -138,7 +138,7 @@ export default function ProductPage({
               </div>
 
               {/* Add to Cart Button */}
-              <button className="flex-1 bg-[#074a2c] text-white px-8 py-4 rounded-full font-display font-bold hover:bg-[#063d24] transition-colors flex items-center justify-center gap-3 shadow-lg shadow-[#074a2c]/20">
+              <button className="flex-1 bg-[#074a2c] text-white px-8 py-4 rounded-full font-display font-bold hover:bg-[#063d24] transition-colors flex items-center justify-center gap-3 shadow-lg shadow-[#074a2c]/20 cursor-pointer">
                 <ShoppingCart className="w-5 h-5" />
                 Agregar al Carrito • ${(product.price * quantity).toFixed(2)}
               </button>
