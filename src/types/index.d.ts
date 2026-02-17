@@ -15,4 +15,5 @@ export interface Product {
   sales: number;
   relevance: number;
   originalPrice?: number;
+  images?: string[];
 }

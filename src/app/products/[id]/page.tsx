@@ -21,6 +21,12 @@ export default function ProductPage({
   const { id } = use(params);
   const product = products.find((p) => p.id === Number(id));
   const [quantity, setQuantity] = useState(1);
+  const [selectedImage, setSelectedImage] = useState(product?.image || "");
+
+  // Update selected image if product changes (though this component remounts on nav)
+  if (product && selectedImage === "") {
+    setSelectedImage(product.image);
+  }
 
   if (!product) {
     return (
@@ -60,15 +66,41 @@ export default function ProductPage({
         </Link>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-          {/* Product Image */}
-          <div className="relative aspect-square rounded-3xl overflow-hidden bg-[#f8f5f2] shadow-sm">
-            <Image
-              src={product.image}
-              alt={product.name}
-              fill
-              className="object-cover"
-              priority
-            />
+          {/* Product Images */}
+          <div className="flex flex-col-reverse lg:flex-row gap-4">
+            {/* Thumbnails */}
+            {(product.images && product.images.length > 0) && (
+              <div className="flex lg:flex-col gap-4 overflow-x-auto lg:overflow-y-auto lg:w-24 flex-shrink-0 scrollbar-hide">
+                {[product.image, ...product.images].map((img, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setSelectedImage(img)}
+                    className={`relative w-20 h-20 lg:w-24 lg:h-24 flex-shrink-0 rounded-2xl overflow-hidden border-2 transition-all cursor-pointer ${selectedImage === img
+                      ? "border-[#074a2c]"
+                      : "border-transparent hover:border-gray-200"
+                      }`}
+                  >
+                    <Image
+                      src={img}
+                      alt={`${product.name} view ${idx + 1}`}
+                      fill
+                      className="object-cover"
+                    />
+                  </button>
+                ))}
+              </div>
+            )}
+
+            {/* Main Image */}
+            <div className="relative aspect-square flex-1 rounded-3xl overflow-hidden bg-[#f8f5f2] shadow-sm">
+              <Image
+                src={selectedImage}
+                alt={product.name}
+                fill
+                className="object-cover transition-opacity duration-300"
+                priority
+              />
+            </div>
           </div>
 
           {/* Product Info */}

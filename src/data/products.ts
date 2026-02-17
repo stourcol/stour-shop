@@ -19,6 +19,12 @@ export const products: Product[] = [
     sales: 150,
     relevance: 95,
     originalPrice: 55000,
+    images: [
+      "https://images.unsplash.com/photo-1485955900006-10f4d324d411?q=80&w=2072&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1592659762303-90081d34b277?q=80&w=1973&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1463320726281-696a485928c7?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1520412099563-98fa26151c1d?q=80&w=2070&auto=format&fit=crop"
+    ]
   },
   {
     id: 2,
