@@ -4,7 +4,7 @@ export const products: Product[] = [
   {
     id: 1,
     name: "Maceta Geométrica",
-    price: 39,
+    price: 39000,
     category: "Decoración",
     image:
       "https://images.unsplash.com/photo-1485955900006-10f4d324d411?q=80&w=2072&auto=format&fit=crop",
@@ -16,11 +16,14 @@ export const products: Product[] = [
       "Agujero de drenaje incluido",
       "Ideal para suculentas y plantas pequeñas",
     ],
+    sales: 150,
+    relevance: 95,
+    originalPrice: 55000,
   },
   {
     id: 2,
     name: "Lámpara de Mesa",
-    price: 45,
+    price: 45000,
     category: "Oficina",
     image:
       "https://images.unsplash.com/photo-1761421592477-259e4a717b4d?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -32,11 +35,13 @@ export const products: Product[] = [
       "Base estable y antideslizante",
       "Diseño minimalista",
     ],
+    sales: 85,
+    relevance: 88,
   },
   {
     id: 3,
     name: "Soporte Auriculares",
-    price: 25,
+    price: 25000,
     category: "Oficina",
     image:
       "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=2070&auto=format&fit=crop",
@@ -48,11 +53,14 @@ export const products: Product[] = [
       "Base ponderada para mayor estabilidad",
       "Acabado suave al tacto",
     ],
+    sales: 210,
+    relevance: 92,
+    originalPrice: 35000,
   },
   {
     id: 4,
     name: "Jarrón Moderno",
-    price: 32,
+    price: 32000,
     category: "Decoración",
     image:
       "https://images.unsplash.com/photo-1580480055273-228ff5388ef8?q=80&w=1974&auto=format&fit=crop",
@@ -64,11 +72,13 @@ export const products: Product[] = [
       "Impermeable",
       "Fácil de limpiar",
     ],
+    sales: 45,
+    relevance: 75,
   },
   {
     id: 5,
     name: "Organizador Escritorio",
-    price: 28,
+    price: 28000,
     category: "Oficina",
     image:
       "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?q=80&w=2070&auto=format&fit=crop",
@@ -80,11 +90,13 @@ export const products: Product[] = [
       "Diseño compacto",
       "Duradero y resistente",
     ],
+    sales: 120,
+    relevance: 82,
   },
   {
     id: 6,
     name: "Maceta Colgante",
-    price: 22,
+    price: 22000,
     category: "Decoración",
     image:
       "https://images.unsplash.com/photo-1463936575829-25148e1db1b8?q=80&w=2070&auto=format&fit=crop",
@@ -96,11 +108,13 @@ export const products: Product[] = [
       "Fácil instalación",
       "Estilo bohemio moderno",
     ],
+    sales: 180,
+    relevance: 90,
   },
   {
     id: 7,
     name: "Reloj de Pared",
-    price: 55,
+    price: 55000,
     category: "Decoración",
     image:
       "https://images.unsplash.com/photo-1563861826100-9cb868fdbe1c?q=80&w=2070&auto=format&fit=crop",
@@ -112,11 +126,13 @@ export const products: Product[] = [
       "Fácil de leer",
       "Diseño atemporal",
     ],
+    sales: 30,
+    relevance: 65,
   },
   {
     id: 8,
     name: "Set Posavasos",
-    price: 18,
+    price: 18000,
     category: "Regalos",
     image:
       "https://images.unsplash.com/photo-1767716843242-b2f98460886f?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -128,5 +144,7 @@ export const products: Product[] = [
       "Juego de 4 piezas",
       "Diseño estampado duradero",
     ],
+    sales: 300,
+    relevance: 98,
   },
 ];

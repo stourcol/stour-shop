@@ -3,6 +3,8 @@
 import { ArrowRight, Plus } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
+import { useLanguage } from "@/context/LanguageContext";
+import { translations } from "@/utils/translations";
 
 interface Hotspot {
   id: number;
@@ -13,13 +15,15 @@ interface Hotspot {
 }
 
 const hotspots: Hotspot[] = [
-  { id: 1, top: 40, left: 30, price: "$39", label: "Maceta Geométrica" },
-  { id: 2, top: 65, left: 60, price: "$25", label: "Soporte Auriculares" },
-  { id: 3, top: 30, left: 75, price: "$45", label: "Lámpara Voronoi" },
+  { id: 1, top: 40, left: 30, price: "$ 39.000", label: "Maceta Geométrica" },
+  { id: 2, top: 65, left: 60, price: "$ 25.000", label: "Soporte Auriculares" },
+  { id: 3, top: 30, left: 75, price: "$ 45.000", label: "Lámpara Voronoi" },
 ];
 
 export function Hero() {
   const [activeHotspot, setActiveHotspot] = useState<number | null>(null);
+  const { language } = useLanguage();
+  const t = translations[language].hero;
 
   return (
     <section className="w-full bg-[#074a2c] text-white overflow-hidden py-4 relative">
@@ -30,20 +34,19 @@ export function Hero() {
             Stour
           </h1>
           <h2 className="text-2xl lg:text-4xl font-display font-medium mb-4 text-[#fbba16]">
-            Decoración & <br />
-            Impresión 3D
+            {t.subtitle1} <br />
+            {t.subtitle2}
           </h2>
           <p className="text-gray-300 text-lg mb-8 max-w-md font-sans leading-relaxed">
-            Transformamos tus espacios con diseños únicos, modernos y
-            personalizados. Tecnología y arte unidos para tu hogar u oficina.
+            {t.desc}
           </p>
 
           <div className="flex flex-wrap gap-4">
             <button className="bg-[#fbba16] text-[#074a2c] px-8 py-3 rounded-full font-display font-bold hover:bg-white transition-colors flex items-center gap-2">
-              Ver Tienda
+              {t.viewShop}
             </button>
             <button className="border border-white/30 text-white px-8 py-3 rounded-full font-display font-medium hover:bg-white/10 transition-colors flex items-center gap-2">
-              Explorar Más <ArrowRight className="w-4 h-4" />
+              {t.exploreMore} <ArrowRight className="w-4 h-4" />
             </button>
           </div>
         </div>
@@ -101,10 +104,10 @@ export function Hero() {
           {/* Floating Card Example */}
           <div className="absolute bottom-8 right-8 bg-[#000000]/60 backdrop-blur-md p-4 rounded-2xl border border-white/10 hidden sm:block max-w-xs">
             <h3 className="text-white font-display font-bold text-lg mb-1">
-              Personalización 3D
+              {t.customCard.title}
             </h3>
             <p className="text-gray-300 text-sm font-sans">
-              Elige color, tamaño y material. Creamos piezas únicas para ti.
+              {t.customCard.desc}
             </p>
           </div>
         </div>

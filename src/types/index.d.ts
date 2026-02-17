@@ -12,4 +12,7 @@ export interface Product {
   category: string;
   description?: string;
   features?: string[];
+  sales: number;
+  relevance: number;
+  originalPrice?: number;
 }

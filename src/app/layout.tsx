@@ -10,7 +10,6 @@ import { LanguageProvider } from "@/context/LanguageContext";
 const navItems: NavItem[] = [
   { title: "home", href: "/" },
   { title: "shop", href: "/shop" },
-  { title: "categories", href: "/categories" },
   { title: "about", href: "/about" },
   { title: "contact", href: "/contact" },
   { title: "blog", href: "/blog" },

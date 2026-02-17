@@ -5,6 +5,8 @@ import Image from "next/image";
 import { ShoppingCart } from "lucide-react";
 import { Product } from "@/types";
 
+import { formatPrice } from "@/utils/format";
+
 interface ProductCardProps {
   product: Product;
 }
@@ -24,6 +26,13 @@ export function ProductCard({ product }: ProductCardProps) {
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
 
+        {/* Discount Badge */}
+        {product.originalPrice && product.originalPrice > product.price && (
+          <div className="absolute top-3 left-3 bg-red-500 text-white text-xs font-bold px-2.5 py-1 rounded-full z-10 font-sans shadow-sm">
+            -{Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}%
+          </div>
+        )}
+
         {/* Quick Add Button - Appears on hover */}
         <button
           className="absolute bottom-4 right-4 translate-y-12 rounded-full bg-[#fbba16] p-3 text-[#074a2c] shadow-lg transition-all duration-300 hover:bg-[#074a2c] hover:text-[#fbba16] group-hover:translate-y-0"
@@ -41,9 +50,16 @@ export function ProductCard({ product }: ProductCardProps) {
         <h3 className="font-display text-lg font-bold text-[#074a2c] mb-1 line-clamp-1">
           {product.name}
         </h3>
-        <span className="font-sans text-lg font-medium text-[#fbba16]">
-          ${product.price}
-        </span>
+        <div className="flex items-center gap-2 flex-wrap">
+          <span className="font-display text-xl font-bold text-[#fbba16]">
+            {formatPrice(product.price)}
+          </span>
+          {product.originalPrice && product.originalPrice > product.price && (
+            <span className="text-sm text-gray-400 line-through font-sans decoration-gray-400/50">
+              {formatPrice(product.originalPrice)}
+            </span>
+          )}
+        </div>
       </div>
     </Link>
   );
