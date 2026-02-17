@@ -6,7 +6,7 @@ export const translations = {
       categories: "Categorías",
       about: "Nosotros",
       contact: "Contacto",
-      blog: "Blog",
+      services: "Servicios",
     },
     utilities: {
       search: "Buscar",
@@ -63,6 +63,28 @@ export const translations = {
         regalos: { name: "Regalos", desc: "Detalles que sorprenden." },
       },
     },
+    servicesPage: {
+      title: "Nuestros Servicios",
+      desc: "Soluciones integrales para potenciar tu negocio y materializar tus ideas.",
+      items: {
+        software: {
+          title: "Creación de software",
+          desc: "Te ayudamos a crear el software para tu negocio, gestionamos y optimizamos tus procesos digitales.",
+        },
+        printing: {
+          title: "Servicio de impresión 3D",
+          desc: "Tienes una idea, la imprimimos. Prototipado rápido y producción de piezas personalizadas.",
+        },
+        consulting: {
+          title: "Tu brazo productivo",
+          desc: "Te ayudamos a sacar adelante tu negocio. Si necesitas algo de lo cual depende tu producto, lo podemos hacer.",
+        },
+        video: {
+          title: "Creación de video",
+          desc: "Producción audiovisual profesional para dar vida a tu marca y comunicar tu mensaje efectivamente.",
+        },
+      },
+    },
   },
   EN: {
     nav: {
@@ -71,7 +93,7 @@ export const translations = {
       categories: "Categories",
       about: "About Us",
       contact: "Contact Us",
-      blog: "Blog",
+      services: "Services",
     },
     utilities: {
       search: "Search",
@@ -126,6 +148,28 @@ export const translations = {
         decoracion: { name: "Decoration", desc: "Style for every corner." },
         oficina: { name: "Office", desc: "Productivity and comfort." },
         regalos: { name: "Gifts", desc: "Details that surprise." },
+      },
+    },
+    servicesPage: {
+      title: "Our Services",
+      desc: "Comprehensive solutions to empower your business and materialise your ideas.",
+      items: {
+        software: {
+          title: "Software Creation",
+          desc: "We help you create software for your business, managing and optimizing your digital processes.",
+        },
+        printing: {
+          title: "3D Printing Service",
+          desc: "You have an idea, we print it. Rapid prototyping and production of custom parts.",
+        },
+        consulting: {
+          title: "Your Productive Arm",
+          desc: "We help you push your business forward. If you need something your product depends on, we can do it.",
+        },
+        video: {
+          title: "Video Creation",
+          desc: "Professional audiovisual production to bring your brand to life and communicate your message effectively.",
+        },
       },
     },
   },

@@ -10,9 +10,9 @@ import { LanguageProvider } from "@/context/LanguageContext";
 const navItems: NavItem[] = [
   { title: "home", href: "/" },
   { title: "shop", href: "/shop" },
+  { title: "services", href: "/services" },
   { title: "about", href: "/about" },
   { title: "contact", href: "/contact" },
-  { title: "blog", href: "/blog" },
 ];
 
 const outfit = Outfit({
